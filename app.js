@@ -21,15 +21,17 @@ searchBtn.addEventListener("click", () => {
       <h1 class='title'><span>Title : </span>${showData["name"]}</h1>
       <p class='date'><span>Date : </span>${showData["premiered"]}</p>
       <p class='lang'><span>Language : </span>${showData["language"]}</p>
-      <button type='submit' class='showDetail' onclick='showDetails()'>Show Details</button>
+      <button type='submit' class='showDetail' onclick='showDetails(id = ${showData['id']})'>Show Details</button>
       </div>`;
 
 
 
         container.innerHTML += showBox;
         mainScreen.classList.remove('inactive')
+        mainScreen.classList.add('backColor')
       }
-    });
+    })
+    .catch((err) => alert("Please check name..."));
 });
 
 
@@ -40,6 +42,16 @@ let showDetailScreen = document.querySelector('.shows-details')
 showDetailScreen.classList.add('inactive')
 
 function showDetails(){
+  showDetailScreen.innerHTML = ""
+
+  fetch(`https://api.tvmaze.com/shows/id?embed[]=seasons&embed[]=cast`)
+  .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+    })
+
+
   container.classList.add('inactive')
   showDetailScreen.classList.remove('inactive')
+  mainScreen.classList.add('backColor')
 }

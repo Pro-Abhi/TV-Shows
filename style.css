@@ -66,6 +66,9 @@ table {
 .inactive{
   display: none;
 }
+.backColor{
+  background-color: cadetblue;
+}
 /***** global CSS end *****/
 
 
@@ -111,9 +114,7 @@ table {
   right: 10px;
 }
 
-#main{
-  background-color: cadetblue;
-}
+
 .shows-container{
   padding: 30px 0;
   flex-wrap: wrap;
