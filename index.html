@@ -12,17 +12,20 @@
 </head>
 <body>
   <header id="header">
-    <div class="wrapper">
+    <div class="wrapper flex">
       <h1 class="logo">Favourite Shows</h1>
-      <div class="input-area">
+      <div class="input-area flex">
         <input type="text" class="input" placeholder="Search favourite shows here...">
-        <button type="submit" class="search">SEARCH</button>
+        <button type="submit" class="search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
       </div>
     </div>
   </header>
-  <main>
+  <main id="main">
     <div class="wrapper">
-      <section class="shows-container"></section>
+      <section class="shows-container flex"></section>
+      <section class="shows-details"></section>
     </div>
   </main>
 
@@ -30,5 +33,6 @@
 
   <!-- JavaScript file -->
   <script src="./app.js"></script>
+  <script src="./showDetails.js"></script>
 </body>
 </html>
