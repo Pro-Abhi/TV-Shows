@@ -37,7 +37,7 @@ fetch(`https://api.tvmaze.com/shows/${tranferData.show.id}/seasons`)
     for (let i = 0; i < data.length; i++) {
       let seasonDetail = `<div class='s-details flex'>
           <div>
-            <p class='season'>season:${data[i].number}</p>
+            <p class='season'>Season:${data[i].number}</p>
             <img src='${data[i].image.medium}'>
           </div>
             <div class='summary'>
