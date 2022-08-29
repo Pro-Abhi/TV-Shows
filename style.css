@@ -169,24 +169,67 @@ table {
 }
 
 #main .shows-details{
+  width: 100%;
+  height: 100%;
   padding: 30px 0;
 }
-/* .shows-details h1{
+.shows-details section{
+  margin: 20px 0;
+}
+.shows-details section h1{
   font-size: 32px;
   font-weight: bold;
-  color: chartreuse;
-}
-.shows-details .basic-details{
-  border-bottom: 2px solid wheat;
-  padding-bottom: 20px;
-}
-#main .shows-details .basic-details .b-detail 
-
-.shows-details .season-details{
-  padding: 20px 0;
+  text-decoration: underline;
 }
 
-.shows-details .cast-details{
+.season-details{
+  width: 100%;
+  padding: 10px 20px;
+}
+.season-details .s-details{
+  width: 100%;
+  height: 200px;
+  min-height: 100px;
+  padding: 10px 0;
+  justify-content: flex-start;
+}
+.season-details .s-details div p{
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.season-details .s-details div img{
+  height: 86%;
+  padding: 5px;
+  object-fit: cover;
+}
+.season-details .s-details > p{
+  padding: 24px 0 0 20px;
+  font-size: 18px;
+}
+
+.cast-details{
+  width: 100%;
+  padding: 0 20px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 20px 20px;
+}
+.cast-details .c-detail{
+  width: 215px;
   padding: 20px 0;
-} */
+}
+.cast-details .c-detail img{
+  height: 80%;
+  object-fit: cover;
+  border: 2px solid goldenrod;
+  margin-bottom: 5px;
+}
+.cast-details .c-detail h2{
+  font-size: 18px;
+  overflow-wrap: break-word;
+}
+.cast-details .c-detail h2 span{
+  font-weight: bold;
+}
 /***** general CSS end *****/

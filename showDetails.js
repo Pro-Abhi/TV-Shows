@@ -37,15 +37,17 @@ fetch(`https://api.tvmaze.com/shows/${tranferData.show.id}/seasons`)
 
     for (let i = 0; i < data.length; i++) {
       if (data[i].summary == null) {
-        data[i].summary = "---";
+        data[i].summary = "";
       }
       if (data[i].image.medium == null) {
         data[i].image.medium = "---";
       }
-      let seasonDetail = `<div class='s-details'>
-          <span>season:${data[i].number}</span>
-          <img src='${data[i].image.medium}'>
-          <p><span>Summary : </span>${data[i].summary}</p>
+      let seasonDetail = `<div class='s-details flex'>
+          <div>
+            <p>season:${data[i].number}</p>
+            <img src='${data[i].image.medium}'>
+          </div>
+            ${data[i].summary}
         </div>`;
 
       seasonDetails.innerHTML += seasonDetail;
@@ -60,8 +62,8 @@ fetch(`https://api.tvmaze.com/shows/${tranferData.show.id}/cast`)
     for (let i = 0; i < data.length; i++) {
       let castDetail = `<div class='c-detail'>
         <img src='${data[i].person.image.medium}'>
-        <h2><sapn>Name : </sapn>${data[i].person.name}</h2>
-        <h2><sapn>Character Name : </sapn>${data[i].character.name}</h2>
+        <h2><span>Name : </span>${data[i].person.name}</h2>
+        <h2><span>Character Name : </span>${data[i].character.name}</h2>
       </div>`;
 
       castDetails.innerHTML += castDetail;
