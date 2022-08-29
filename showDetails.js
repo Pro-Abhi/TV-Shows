@@ -13,19 +13,18 @@ fetch(`https://api.tvmaze.com/shows/${tranferData.show.id}`)
   .then((data) => {
     console.log(data);
 
-    let basicDetail = `<div class='b-detail>
-    <div class='details flex'>
+    let basicDetail = `<div class="b-details flex">
       <div class='img'>
-        <img src='${data.image.medium}'>
+        <img src="${data.image.medium}" />
       </div>
-      <div class='info'>
-        <h1 class='title'>${data.name}</h1>
-        <p class='genres'><span>Genres : </span>${data.genres}</p>
-        <p class='status'><span>Status : </span>${data.status}</p>
+      <div class="right">
+        <h1>${data.name}</h1>
+        <p>Genres : ${data.genres}</p>
+        <p>Language : ${data.language}</p> 
+        <p>Status : ${data.status}</p> 
       </div>
     </div>
-    <div class='summary'>${data.summary}</div>
-  </div>`;
+    <div class='summary'>${data.summary}</div>`;
 
     basicDetails.innerHTML += basicDetail;
   });
@@ -36,21 +35,22 @@ fetch(`https://api.tvmaze.com/shows/${tranferData.show.id}/seasons`)
     console.log(data);
 
     for (let i = 0; i < data.length; i++) {
-      if (data[i].summary == null) {
-        data[i].summary = "";
-      }
-      if (data[i].image.medium == null) {
-        data[i].image.medium = "---";
-      }
       let seasonDetail = `<div class='s-details flex'>
           <div>
-            <p>season:${data[i].number}</p>
+            <p class='season'>season:${data[i].number}</p>
             <img src='${data[i].image.medium}'>
           </div>
-            ${data[i].summary}
+            <div class='summary'>
+              ${data[i].summary}
+            </div>
         </div>`;
 
+        if (data[i].summary == null || data[i].image == null) {
+          seasonDetails.removeChild()
+        }
+
       seasonDetails.innerHTML += seasonDetail;
+      console.log(seasonDetails.length);
     }
   });
 
@@ -69,3 +69,4 @@ fetch(`https://api.tvmaze.com/shows/${tranferData.show.id}/cast`)
       castDetails.innerHTML += castDetail;
     }
   });
+

@@ -161,7 +161,7 @@ table {
   text-decoration-line: none;
 }
 
-
+/* show-details page ---> header section */
 #header .nav a{
   font-size: 25px;
   text-decoration: none;
@@ -173,15 +173,48 @@ table {
   height: 100%;
   padding: 30px 0;
 }
-.shows-details section{
-  margin: 20px 0;
-}
-.shows-details section h1{
+.shows-details h1{
   font-size: 32px;
   font-weight: bold;
   text-decoration: underline;
 }
+.shows-details section{
+  margin: 20px 0;
+}
 
+
+/* show-details page ---> basic-details section */
+.basic-details{
+  width: 100%;
+  padding: 10px 20px;
+}
+.basic-details .b-details{
+  margin-bottom: 15px;
+  justify-content: flex-start;
+}
+.basic-details .b-details .right{
+  margin-left: 50px;
+  text-align: left;
+  align-self: center;
+}
+.basic-details .right h1{
+  font-size: 50px;
+  text-decoration: none;
+  color: gold;
+  margin-bottom: 20px;
+}
+.basic-details .right p{
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.basic-details .summary{
+  font-size: 20px;
+  line-height: 1.1;
+}
+
+
+/* show-details page ---> season-details section */
 .season-details{
   width: 100%;
   padding: 10px 20px;
@@ -189,31 +222,34 @@ table {
 .season-details .s-details{
   width: 100%;
   height: 200px;
-  min-height: 100px;
   padding: 10px 0;
   justify-content: flex-start;
+  border: 1px solid lightgray;
 }
-.season-details .s-details div p{
+.season-details .s-details div .season{
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 5px;
 }
 .season-details .s-details div img{
-  height: 86%;
+  height: 88%;
   padding: 5px;
   object-fit: cover;
 }
-.season-details .s-details > p{
-  padding: 24px 0 0 20px;
+.season-details .s-details .summary p{
+  padding: 28px 0 0 20px;
   font-size: 18px;
+  line-height: 1.05;
 }
 
+
+/* show-details page ---> cast-details section */
 .cast-details{
   width: 100%;
   padding: 0 20px;
   flex-wrap: wrap;
   justify-content: flex-start;
-  gap: 20px 20px;
+  gap: 10px 20px;
 }
 .cast-details .c-detail{
   width: 215px;
@@ -228,6 +264,7 @@ table {
 .cast-details .c-detail h2{
   font-size: 18px;
   overflow-wrap: break-word;
+  line-height: 1.1;
 }
 .cast-details .c-detail h2 span{
   font-weight: bold;
