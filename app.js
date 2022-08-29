@@ -2,10 +2,10 @@
 let input = document.querySelector(".input");
 let searchBtn = document.querySelector(".search");
 let container = document.querySelector(".shows-container");
-let detilsPage = document.querySelector('.showDetail')
-let mainScreen = document.querySelector('#main')
+let mainScreen = document.querySelector("#main");
+let detilsPageBtn = document.querySelector(".showDetail");
 
-mainScreen.classList.add('inactive')
+mainScreen.classList.add("inactive");
 
 searchBtn.addEventListener("click", () => {
   container.innerHTML = "";
@@ -13,45 +13,26 @@ searchBtn.addEventListener("click", () => {
     .then((response) => response.json())
     .then((data) => {
       for (let i = 0; i < data.length; i++) {
-        let showData = data[i]["show"];
-        // console.log(showData);
+        let showData = data[i]
 
         let showBox = `<div class='show-box flex'>
-      <img src='${showData["image"]["medium"]}'>
-      <h1 class='title'><span>Title : </span>${showData["name"]}</h1>
-      <p class='date'><span>Date : </span>${showData["premiered"]}</p>
-      <p class='lang'><span>Language : </span>${showData["language"]}</p>
-      <button type='submit' class='showDetail' onclick='showDetails(id = ${showData['id']})'>Show Details</button>
+      <img src='${showData["show"]["image"]["medium"]}'>
+      <h1 class='title'><span>Title : </span>${showData["show"]["name"]}</h1>
+      <p class='date'><span>Date : </span>${showData["show"]["premiered"]}</p>
+      <p class='lang'><span>Language : </span>${showData["show"]["language"]}</p>
+      <a href='./showDetails.html' class='showDetail' id=${showData["show"]['id']}>Show Details</a>
       </div>`;
 
-
-
         container.innerHTML += showBox;
-        mainScreen.classList.remove('inactive')
-        mainScreen.classList.add('backColor')
+        mainScreen.classList.remove("inactive");
+        mainScreen.classList.add("backColor");
+
+
+        container.addEventListener('click', (e) => {
+          if(e.target.id == showData['show']['id']){
+            sessionStorage.setItem('showData', JSON.stringify(showData))
+          }
+        })
       }
     })
-    .catch((err) => alert("Please check name..."));
 });
-
-
-
-let detailsBtn = document.querySelector('.showDetail')
-let showDetailScreen = document.querySelector('.shows-details')
-
-showDetailScreen.classList.add('inactive')
-
-function showDetails(){
-  showDetailScreen.innerHTML = ""
-
-  fetch(`https://api.tvmaze.com/shows/id?embed[]=seasons&embed[]=cast`)
-  .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-    })
-
-
-  container.classList.add('inactive')
-  showDetailScreen.classList.remove('inactive')
-  mainScreen.classList.add('backColor')
-}

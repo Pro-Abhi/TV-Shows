@@ -93,7 +93,7 @@ table {
 }
 #header .input-area .input{
   width: 100%;
-  padding: 10px;
+  padding: 10px 25px;
   border: none;
   outline-color:coral;
   font-size: 22px;
@@ -101,6 +101,7 @@ table {
   border-radius: 15px;
   position: absolute;
   left: 0;
+  line-height: 1.5;
 }
 #header .input-area button{
   width: 10%;
@@ -112,6 +113,7 @@ table {
   font-size: 20px;
   position: absolute;
   right: 10px;
+  line-height: 1.5;
 }
 
 
@@ -146,14 +148,45 @@ table {
   margin-bottom: 10px;
   font-weight: bold;
 }
-.shows-container .show-box .showDetail{
+.shows-container .show-box a{
   align-self: center;
   padding: 10px 15px;
   margin-top: 10px;
   background-color: darkgoldenrod;
   border: none;
   font-size: 20px;
+  color: wheat;
   border-radius: 20px;
   cursor: pointer;
+  text-decoration-line: none;
 }
+
+
+#header .nav a{
+  font-size: 25px;
+  text-decoration: none;
+  color: white;
+}
+
+#main .shows-details{
+  padding: 30px 0;
+}
+/* .shows-details h1{
+  font-size: 32px;
+  font-weight: bold;
+  color: chartreuse;
+}
+.shows-details .basic-details{
+  border-bottom: 2px solid wheat;
+  padding-bottom: 20px;
+}
+#main .shows-details .basic-details .b-detail 
+
+.shows-details .season-details{
+  padding: 20px 0;
+}
+
+.shows-details .cast-details{
+  padding: 20px 0;
+} */
 /***** general CSS end *****/
