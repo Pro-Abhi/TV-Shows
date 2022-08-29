@@ -50,7 +50,6 @@ fetch(`https://api.tvmaze.com/shows/${tranferData.show.id}/seasons`)
         }
 
       seasonDetails.innerHTML += seasonDetail;
-      console.log(seasonDetails.length);
     }
   });
 
