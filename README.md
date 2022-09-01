@@ -2,6 +2,10 @@
 https://630ce9b7c1742307b85ca65d--glittery-clafoutis-7ee991.netlify.app/
 
 
+# Deploy on GitHub Page - 
+https://pro-abhi.github.io/TV-Shows/
+
+
 # TV Shows - Home scrreen
 ![home-screen](https://user-images.githubusercontent.com/105339279/187817510-9226cd61-6f31-4bf3-8e17-7b6e6f1b7458.png)
 
